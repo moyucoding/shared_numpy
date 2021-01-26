@@ -5,9 +5,9 @@ import platform
 import subprocess
 
 if sys.version_info[0] == 3 and sys.version_info[1] == 6:
-    subprocess.run(["python", "shared_numpy/py36_clinic.py", "shared_numpy/posixshmem.c"])
+    subprocess.run(["python3", "shared_numpy/py36_clinic.py", "shared_numpy/posixshmem.c"])
 elif sys.version_info[0] == 3 and sys.version_info[1] == 7:
-    subprocess.run(["python", "shared_numpy/py37_clinic.py", "shared_numpy/posixshmem.c"])
+    subprocess.run(["python3", "shared_numpy/py37_clinic.py", "shared_numpy/posixshmem.c"])
 else:
     raise ValueError("Must run on Python 3.6 or 3.7")
 
