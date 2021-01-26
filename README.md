@@ -11,17 +11,18 @@ This package provides two main items:
 Install
 ---
 
-1. To install run `python setup.py build_ext --inplace`. It will generate 
+1. To install run `python3 setup.py build_ext --inplace`. It will generate 
    "_posixshmem.cpython-37m-x86_64-linux-gnu.so" file and others in Python3.7 environment.
 
 2. Copy the `resource_tracker.py` file under the folder to your Python's multiprocessing path,
    like `cp resource_tracker.py /root/conda/envs/env_sample/lib/python3.7/multiprocessing/`.
 
 3. Copy the generated `_posixshmem*.so` file in the shared\_numpy subfolder to your Python's lib-dynload path, 
-   like `cp ./shared_numpy/_posixshmem.cpython-37m-x86_64-linux-gnu.so ~/conda/envs/env_sample/lib/python3.7/lib-dynload`.
+   like `cp ./shared_numpy/_posixshmem.cpython-37m-x86_64-linux-gnu.so ~/conda/envs/env_sample/lib/python3.7/lib-dynload/`.
 
 4. Copy the shared\_numpy subfolder which include the generated `_posixshmem*.so` file to your project directory,
    like `cp ./shared_numpy/shared_numpy/ ./your_project_home_directory`.
+   Or copy the fold to your Python's lib path, like `cp ./shared_numpy/shared_numpy/ ./conda/envs/env_sample/lib/python3.7/`
 
 5. Enjoy to use shared\_memory in Python3.6/3.7 like in Python3.8 . Please pay attention to replace the 
    `from multiprocessing import shared_memory` to `from shared_numpy import shared_memory`.
